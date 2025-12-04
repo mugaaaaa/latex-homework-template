@@ -1,60 +1,62 @@
-latex-homework-template
+latex-homework-template 
 =======================
 
-The LaTeX file that I use as the base for all my homeworks in university. You should follow [me on Twitter][twitter].
+## features
 
-## Features
+1. Seperate the template into two parts: `homework.tex` and `homework_problems.tex`.
+2. Add some new command for maths.
+   ```tex
+   \newcommand{\solution}{\textbf{\large Solution}}
 
-Here are just a few features of this homework template.
+   \newcommand{\R}[1]{\ensuremath{\mathbb{R}}^{#1} }
+   \newcommand{\N}[1]{\ensuremath{\mathbb{N}}^{#1} }
+   \newcommand{\Z}[1]{\ensuremath{\mathbb{Z}}^{#1} }
+   \newcommand{\Q}[1]{\ensuremath{\mathbb{Q}}^{#1} }
 
-1. Title page.
-2. Problem markers.
-3. Configurable problem numbers (see the last 3 problems for an example).
-4. Some commonly used math macros.
+   \newcommand{\cl}[1]{\ensuremath{\mathcal{#1}} }
 
-## Screenshots
+   % zero vector
+   \newcommand{\zv}{\ensuremath{\mathbf{0}} }
+   \newcommand{\x}{\ensuremath{\mathbf{x}} }
+   \newcommand{\y}{\ensuremath{\mathbf{y}} }
+   \newcommand{\z}{\ensuremath{\mathbf{z}} }
+   \newcommand{\veca}{\ensuremath{\mathbf{a}} }
+   \newcommand{\vecb}{\ensuremath{\mathbf{b}} }
+   \newcommand{\vecc}{\ensuremath{\mathbf{c}} }
+   \newcommand{\vecu}{\ensuremath{\mathbf{u}} }
+   \newcommand{\vecv}{\ensuremath{\mathbf{v}} }
+   \newcommand{\vecw}{\ensuremath{\mathbf{w}} }
 
-### The Cover Page:
+   % \newcommand{\det}{\ensuremath{\mathrm{det}}}
+   \newcommand{\pdet}[1]{\ensuremath{\mathrm{det} \left( #1 \right)} }
+   % \newcommand{\dim}{\ensuremath{\mathrm{dim}}}
+   \newcommand{\pdim}[1]{\ensuremath{\mathrm{dim} \left( #1 \right)} }
+   \newcommand{\rank}{\ensuremath{\mathrm{rank}}}
+   \newcommand{\prank}[1]{\ensuremath{\mathrm{rank} \left( #1 \right)} }
+   \newcommand{\nul}{\ensuremath{\mathrm{Nul}}}
+   \newcommand{\pnul}[1]{\ensuremath{\mathrm{Nul} \left( #1 \right)} }
+   \newcommand{\col}{\ensuremath{\mathrm{Col}}}
+   \newcommand{\pcol}[1]{\ensuremath{\mathrm{Col} \left( #1 \right)} }
+   \newcommand{\row}{\ensuremath{\mathrm{Row}}}
+   \newcommand{\prow}[1]{\ensuremath{\mathrm{Row} \left( #1 \right)} }
+   % \newcommand{\span}{\ensuremath{\mathrm{span} \left{ #1 \right}}}
+   \newcommand{\adj}{\ensuremath{\mathrm{adj}} }
+   \newcommand{\padj}[1]{\ensuremath{\mathrm{adj} \left( #1 \right)} }
+   \newcommand{\tr}{\ensuremath{^{T}} }
 
-![Cover page](/images/latex1.png)
+   \newcommand{\pd}{\ensuremath{\partial}}
 
-### Big Oh Example Problem:
-![Example problems 1](/images/latex2.png)
+   \newcommand{\pmat}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}} }  % Parentheses
+   \newcommand{\bmat}[1]{\ensuremath{\begin{bmatrix}#1\end{bmatrix}} }  % Square brackets
+   \newcommand{\Bmat}[1]{\ensuremath{\begin{Bmatrix}#1\end{Bmatrix}} }  % Curly braces
+   \newcommand{\vmat}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}} }  % Single vertical line (determinant)
+   \newcommand{\Vmat}[1]{\ensuremath{\begin{Vmatrix}#1\end{Vmatrix}} }  % Double vertical line (norm)
 
-### Automata & Pseudocode Problems:
-![Example problems 2](/images/latex3.png)
+   \newcommand{\covec}[3]{\ensuremath{\left[ \mathbf{#1}_{#2} \right]_{\mathcal{#3}}}} 
 
-### Statistics Problem:
-![Example problems 3](/images/latex4.png)
+   % change-of-coordinates matrix from standard basis to #1
+   \newcommand{\chco}[1]{\ensuremath{P_{\mathcal{#1}}}}
 
-### Proof Problem:
-![Example problems 4](/images/latex5.png)
-
-### Adjustable Problem Numbers
-![Example problem numbering](/images/latex6.png)
-
-## Installing
-
-1. First you'll need LaTeX. Instructions on obtaining it can be found here:
-   http://latex-project.org/ftp.html
-2. Compiling from the command line will look like the following:
-
-   ```bash
-   $ latexmk homework.tex
+   % change-of-coordinates matrix from #1 to #2
+   \newcommand{\cchco}[2]{\ensuremath{\underset{\mathcal{#2} \leftarrow \mathcal{#1}}{P}}}
    ```
-3. Or you can use [TeXShop][texshop] or a similar native client to typeset the
-   LaTeX file.
-
-## Credit
-
-When first starting with LaTeX, I came across [this template][credit] and used
-it as a base for starting my template. As you can see, it is pretty similar.
-
-## License
-
-This code is distributed under the MIT license. For more info, read the
-[LICENSE](/LICENSE) file distributed with the source code.
-
-[texshop]: http://pages.uoregon.edu/koch/texshop/
-[credit]: http://www.latextemplates.com/template/programming-coding-assignment
-[twitter]: https://twitter.com/jldavis

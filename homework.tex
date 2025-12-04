@@ -9,6 +9,10 @@
 \usepackage[plain]{algorithm}
 \usepackage{algpseudocode}
 \usepackage{ctex}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{color}
+
 
 \usetikzlibrary{automata,positioning}
 
@@ -66,9 +70,9 @@
 % assignment aren't sequential. See the last 3 problems of this template for an
 % example.
 %
-\newcommand{\currentProblemTitle}{}  % 存储当前题目标题
+\newcommand{\currentProblemTitle}{}  % store the title of the current problem
 
-\newenvironment{homeworkProblem}[1][]{  % 可选参数，默认留空
+\newenvironment{homeworkProblem}[1][]{  % optional argument, default is empty
     \renewcommand{\currentProblemTitle}{#1}%
     \section{#1}%
     \setcounter{partCounter}{1}%
@@ -87,12 +91,12 @@
 %   - Author
 %
 
-\newcommand{\hmwkTitle}{第八周作业}
-\newcommand{\hmwkDueDate}{November 9, 2025}
-\newcommand{\hmwkClass}{高等代数}
+\newcommand{\hmwkTitle}{Homework Title}
+\newcommand{\hmwkDueDate}{November 30, 2025}
+\newcommand{\hmwkClass}{Class Name}
 \newcommand{\hmwkClassTime}{}
 \newcommand{\hmwkClassInstructor}{}
-\newcommand{\hmwkAuthorName}{\textbf{咕咕嘎嘎} \quad \textbf{11451419}}
+\newcommand{\hmwkAuthorName}{\textbf{Your Name} \quad \textbf{Your Student ID}}
 
 %
 % Title Page
@@ -155,11 +159,11 @@
 
 \newcommand{\pd}{\ensuremath{\partial}}
 
-\newcommand{\pmat}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}} }  % 小括号
-\newcommand{\bmat}[1]{\ensuremath{\begin{bmatrix}#1\end{bmatrix}} }  % 中括号
-\newcommand{\Bmat}[1]{\ensuremath{\begin{Bmatrix}#1\end{Bmatrix}} }  % 大括号
-\newcommand{\vmat}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}} }  % 单竖线（行列式）
-\newcommand{\Vmat}[1]{\ensuremath{\begin{Vmatrix}#1\end{Vmatrix}} }  % 双竖线（范数）
+\newcommand{\pmat}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}} }  % Parentheses
+\newcommand{\bmat}[1]{\ensuremath{\begin{bmatrix}#1\end{bmatrix}} }  % Square brackets
+\newcommand{\Bmat}[1]{\ensuremath{\begin{Bmatrix}#1\end{Bmatrix}} }  % Curly braces
+\newcommand{\vmat}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}} }  % Single vertical line (determinant)
+\newcommand{\Vmat}[1]{\ensuremath{\begin{Vmatrix}#1\end{Vmatrix}} }  % Double vertical line (norm)
 
 \newcommand{\covec}[3]{\ensuremath{\left[ \mathbf{#1}_{#2} \right]_{\mathcal{#3}}}} 
 
@@ -169,55 +173,22 @@
 % change-of-coordinates matrix from #1 to #2
 \newcommand{\cchco}[2]{\ensuremath{\underset{\mathcal{#2} \leftarrow \mathcal{#1}}{P}}}
 
+% setting listings
+\lstset{
+    numbers=left,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue!100},
+    commentstyle=\color{gray!70},
+    stringstyle=\color{red},
+    breaklines=true,
+    backgroundcolor=\color{gray!10},
+    frame = tb;
+}
+
 \begin{document}
 
 \maketitle
 
-\pagebreak
-
-\begin{homeworkProblem}[4.4 Exercises 4]
-Find the vector \( x \) determined by the given coordinate vector \([x]_{B}\) and the given basis \( B \).
-\[
-B = \left\{ \begin{bmatrix} -1 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} 3 \\ -5 \\ 2 \end{bmatrix}, \begin{bmatrix} 4 \\ -7 \\ 3 \end{bmatrix} \right\}, \quad [x]_{B} = \begin{bmatrix} -4 \\ 8 \\ -7 \end{bmatrix}
-\]
-
-\noindent\textbf{Solution.}
-\[
-x = (-4)
-\begin{bmatrix}
-    -1 \\ 2 \\ 0
-\end{bmatrix}
-+ 8
-\begin{bmatrix}
-    3 \\ -5 \\ 2
-\end{bmatrix}
-+ (-1)
-\begin{bmatrix}
-    4 \\ -7 \\ 3
-\end{bmatrix}
-=
-\begin{bmatrix}
-    0 \\ 1 \\ 5
-\end{bmatrix}
-\]
-
-\end{homeworkProblem}
-
-\pagebreak
-
-\begin{homeworkProblem}[Test]
-
-\[
-\cchco{B}{A} = \bmat{1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1}
-\]
-
-\[
-\chco{B} = \bmat{1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1}
-\]
-
-\[
-\covec{x}{1}{B} = \covec{x}{}{B}
-\]
-\end{homeworkProblem}
+\input{homework_problems.tex}
 
 \end{document}
